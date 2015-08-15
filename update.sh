@@ -3,8 +3,8 @@
 # Copy binaries
 for b in bin/*; do
   file=`basename $b`
-  # Don't copy symlinks like clang++
-  if test -h $b; then
+  # Don't copy symlinks like clang++ or directories
+  if test -h $b || test -d $b; then
     echo Skipping $file
   else
     echo Copying $file
