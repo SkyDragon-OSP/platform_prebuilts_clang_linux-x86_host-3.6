@@ -18,7 +18,7 @@ for lib in $LIBS; do
   cp -a ${OBJ64}/${lib}_intermediates/${lib}.a ${lib64}
 done
 
-LIBS64='libtsan'
+LIBS64='libtsan libtsan_cxx'
 for lib in $LIBS64; do
   libname=${lib:3} # Strip 'lib' prefix.
   lib64=${LIBDEST}/libclang_rt.${libname}-x86_64.a
